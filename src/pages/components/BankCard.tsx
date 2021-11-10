@@ -1,5 +1,6 @@
 import { createStyles, makeStyles } from '@mui/styles'
 import React from 'react'
+// import logo from '../../images/logo.JPG';
 
 const useStyles = makeStyles(() => createStyles({
     bankCard:{
@@ -7,7 +8,8 @@ const useStyles = makeStyles(() => createStyles({
         background: '#ebe9e9',
         borderRadius: '10px',
         padding: '30px',
-        textAlign: 'left'
+        textAlign: 'left',
+        marginBottom: 30
     },
     bankCard__amount:{
         fontSize: '1.3em',
@@ -28,6 +30,7 @@ export const BankCard = () => {
     const classes=useStyles()
     return (
         <div className={classes.bankCard}>
+            {/* <img src={logo} alt="Logo" /> */}
             <div className={classes.bankCard__amount}>
                 1224.42 <span  className={classes.moneySign}>USD</span>
             </div>
