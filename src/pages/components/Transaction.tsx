@@ -1,5 +1,4 @@
 import React from 'react'
-import SendIcon from '@mui/icons-material/Send';
 import { createStyles, makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => createStyles({
@@ -10,11 +9,12 @@ const useStyles = makeStyles(() => createStyles({
         marginTop: 16
     },
     transactionIcon:{
-        height: 50,
+        height: 60,
+        width: 60,
         transform: 'rotate(-34deg)',
-        marginLeft: 5,
-        marginRight: 16,
-        paddingTop: 10,
+        marginLeft: 7,
+        marginRight: 12,
+        paddingTop: 3,
         color: 'rgba(0, 0, 0, 0.54)'
     },
     transactionInfos:{
@@ -28,15 +28,16 @@ const useStyles = makeStyles(() => createStyles({
     },
     transactionUsername:{
         fontWeight: 'bold',
-        marginBottom: 5
+        marginBottom: 5,
+        color: 'rgba(0, 0, 0, 0.54)'
     },
     transactionStatus:{
         fontSize: '0.9em',
         color: 'rgba(0, 0, 0, 0.54)'
     },
     transactionDetail:{
-        fontSize: '1.4em'
-
+        fontSize: '1.4em',
+        color: 'rgba(0, 0, 0, 0.54)'
     },
     transactionAmount:{
         marginRight: 5
@@ -47,23 +48,23 @@ const useStyles = makeStyles(() => createStyles({
     }
  }));
 
-export const Transaction = () => {
+export const Transaction = (props: { isTransaction: boolean; operationName?:string; username?: string; status: string, amount: number, moneySign: string; icon: React.ReactNode}) => {
     const classes = useStyles();
     return (
         <div className={classes.transaction}>
             <div className={classes.transactionIcon}>
-                <SendIcon/>
+              {props.icon}
             </div>
             
             <div className={classes.transactionInfos}>
 
             <div className={classes.transactionUser}>
-                <div className={classes.transactionUsername}>To martin Michel</div>
-                <div className={classes.transactionStatus}>sent</div>
+                <div className={classes.transactionUsername}>{ props.isTransaction && ('To') } {props.isTransaction ? props.username : props.operationName}</div>
+                <div className={classes.transactionStatus}>{props.status}</div>
             </div>
             <div className={classes.transactionDetail}>
-                <span className={classes.transactionAmount}>-3,00052</span>
-                <span className={classes.transactionMoneySign}>USD</span>
+                <span className={classes.transactionAmount}>{props.amount}</span>
+                <span className={classes.transactionMoneySign}>{props.moneySign}</span>
             </div>
 
 

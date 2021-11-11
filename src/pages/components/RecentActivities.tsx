@@ -2,6 +2,7 @@ import { createStyles, makeStyles } from '@mui/styles'
 import React from 'react'
 import { Transaction } from './Transaction';
 import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges';
+import SendIcon from '@mui/icons-material/Send';
 
 const useStyles = makeStyles(() => createStyles({
     recentActivityHeader:{
@@ -28,7 +29,7 @@ const useStyles = makeStyles(() => createStyles({
         }
     },
     transactionList:{
-
+        marginBottom: 16
     },
     recentActivity:{
         width: 600,
@@ -40,6 +41,34 @@ const useStyles = makeStyles(() => createStyles({
     }
  }));
 
+const transtionsData=[
+    {
+        isTransaction: true,
+        username: 'Martin Michel', 
+        status: 'sent',
+        amount: -3.00052,
+        moneySign: 'USD',
+        icon:   <SendIcon/>
+    },
+    {
+        isTransaction: true,
+        username: 'Jane Klamberberg', 
+        status: 'sent',
+        amount: -1.0023,
+        moneySign: 'USD',
+        icon:   <SendIcon/>
+    },
+
+    {
+        isTransaction: false,
+        operationName: 'EURO to USD', 
+        status: 'sent',
+        amount: -3.00052,
+        moneySign: 'USD',
+        icon:   <PublishedWithChangesIcon/>
+    },
+    
+]
 export const RecentActivities = () => {
     const classes = useStyles();
     return (
@@ -55,8 +84,13 @@ export const RecentActivities = () => {
                 Today
             </span>
             <div className={classes.transactionList}>
-                <Transaction/>
+                {
+                    transtionsData.map(el=>(<Transaction {...el}/>))
+                }
             </div>
+            <span className={classes.activityDate}>
+                Yesterday
+            </span>
 
         </div>
     )

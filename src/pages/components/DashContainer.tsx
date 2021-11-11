@@ -118,7 +118,6 @@ export function DashContainer(props: {
                 {props.menu}
             </Drawer>
             <main className={classes.content}>
-                <div className={classes.toolbar} />
                 {props.children}
             </main>
         </div>

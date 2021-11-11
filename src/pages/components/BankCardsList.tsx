@@ -52,7 +52,8 @@ const cardData=[{
         expiresDate: '04 / 04',
         logo: null,
         isLocked: false,
-        isActive: true
+        isActive: true,
+        type: 'mastercard'
 
     },{
         companyName: '',
@@ -61,7 +62,9 @@ const cardData=[{
         expiresDate: '05 / 25',
         logo: null,
         isLocked: false,
-        isActive: false
+        isActive: false,
+        type: 'visa'
+
 
     }
     ,{
@@ -71,7 +74,8 @@ const cardData=[{
         expiresDate: '01 / 25',
         logo: null,
         isLocked: true,
-        isActive: false
+        isActive: false,
+        type: 'mastercard'
 
     }
 ];
