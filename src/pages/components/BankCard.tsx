@@ -1,11 +1,12 @@
 import { createStyles, makeStyles } from '@mui/styles'
 import React from 'react'
-// import logo from '../../images/logo.JPG';
+// @ts-ignore
+import logo from '../../images/logo.JPG';
 
 const useStyles = makeStyles(() => createStyles({
     bankCard:{
-        width: '450px',
-        background: '#ebe9e9',
+        width: 400,
+        background: 'white',
         borderRadius: '10px',
         padding: '30px',
         textAlign: 'left',
@@ -23,6 +24,13 @@ const useStyles = makeStyles(() => createStyles({
     },
     bankCard__date:{
         fontSize: '0.9em',
+    },
+    bankCard__company:{
+        display: 'flex', 
+        alignItems: 'center'
+    },
+    bankCard__companyText:{
+        fontWeight: 'bold'
     }
 }))
 
@@ -30,7 +38,9 @@ export const BankCard = () => {
     const classes=useStyles()
     return (
         <div className={classes.bankCard}>
-            {/* <img src={logo} alt="Logo" /> */}
+            <div className={classes.bankCard__company}>
+            <img src={logo} alt="Logo" /> <span className={classes.bankCard__companyText}>Corporate</span>
+            </div>
             <div className={classes.bankCard__amount}>
                 1224.42 <span  className={classes.moneySign}>USD</span>
             </div>

@@ -4,6 +4,8 @@ import { RoutesAdmin } from '../../utils/enum/RoutesAdmin'
 import { BankCardsList } from '../components/BankCardsList'
 import { DashContainer } from '../components/DashContainer'
 import { MenuNav } from '../components/MenuNav'
+import { LimitCardsList } from '../components/LimitCardsList';
+import { InternPayments } from '../components/InternPayments'
 
 export const Dashboard = () => {
     return (
@@ -15,6 +17,8 @@ export const Dashboard = () => {
             {/* <Route path={RoutesAdmin.OVERVIEW} > */}
               <BankCardsList/>
             {/* </Route> */}
+              <LimitCardsList/>
+              <InternPayments/>
 
           </DashContainer>
         </div>

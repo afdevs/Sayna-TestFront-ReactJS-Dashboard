@@ -5,6 +5,7 @@ import { Dashboard } from './pages/Dashboard/Dashboard';
 import { defaulColors } from './styles/defaultColors';
 import { green } from '@mui/material/colors';
 import { BrowserRouter } from 'react-router-dom';
+import { createStyles, makeStyles } from '@mui/styles';
 
 const theme = createTheme({
   palette: {
@@ -17,11 +18,22 @@ const theme = createTheme({
   },
 });
 
+const useStyles = makeStyles(() => createStyles({
+  app: {
+    maxWidth: '1580px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    background: 'white'
+  },
+}));
+
+
 function App() {
+  const classes=useStyles();
   return (
     <ThemeProvider theme={theme}>
     <BrowserRouter>
-      <div className="App">
+      <div className={classes.app}>
           <Dashboard/>
         </div>
       </BrowserRouter>

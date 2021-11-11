@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme:Theme) => createStyles ({
         whiteSpace: 'nowrap',
         paddingTop: 72, // appBar height + paddingTop of first content of link
         position: 'relative',
-        height: '100vh'
+        height: '100vh',
     },
     drawerOpen: {
         paddingTop: 72, // appBar height + paddingTop of first content of link
@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme:Theme) => createStyles ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
+        left: 'inherit!important' as any
     },
     drawerClose: {
         paddingTop: 72, // appBar height + paddingTop of first content of link
@@ -78,6 +79,7 @@ const useStyles = makeStyles((theme:Theme) => createStyles ({
         alignItems: 'center',
     },
     content: {
+        background: '#f9fbff',
         flexGrow: 1,
         padding: theme.spacing(3),
     },
