@@ -18,6 +18,7 @@ const useStyles = makeStyles(() => createStyles({
         maxWidth: 480
    },
    newCard:{
+    color: 'rgba(0, 0, 0, 0.54)',
     display: 'inline-block',
     background: '#e9ecf5',
     padding: '8px 15px',
@@ -44,7 +45,36 @@ const useStyles = makeStyles(() => createStyles({
        fontSize: '2em'
    }
 }))
-const cartLists=[0,2,3];
+const cardData=[{
+        companyName: '',
+        amount: 1224.42,
+        cardNumber: '5434 3456 4344 4345',
+        expiresDate: '04 / 04',
+        logo: null,
+        isLocked: false,
+        isActive: true
+
+    },{
+        companyName: '',
+        amount: 249.00,
+        cardNumber: '4535 8933 1673 6770',
+        expiresDate: '05 / 25',
+        logo: null,
+        isLocked: false,
+        isActive: false
+
+    }
+    ,{
+        companyName: 'Corprorate',
+        amount: 249.00,
+        cardNumber: '5363 7205 7398 4138',
+        expiresDate: '01 / 25',
+        logo: null,
+        isLocked: true,
+        isActive: false
+
+    }
+];
 export const BankCardsList = () => {
     const classes=useStyles();
     return (
@@ -52,8 +82,8 @@ export const BankCardsList = () => {
             <h2 className={classes.title}>Your cards </h2> <button className={classes.newCard}>New card <span className={classes.plusIcon}>+</span></button>
             <div className={classes.bankCardList}>
                 {
-                    cartLists.map(b=>{
-                        return <BankCard/>
+                    cardData.map(el=>{
+                        return <BankCard {...el} />
                     })
                 }
             </div>

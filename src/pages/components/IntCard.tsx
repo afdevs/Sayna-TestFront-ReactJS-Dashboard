@@ -27,7 +27,8 @@ const useStyles = makeStyles(() => createStyles({
         marginBottom:10
     },
     processName:{
-        fontSize: '1em'
+        fontSize: '1em',
+        color: 'rgba(0, 0, 0, 0.54)'
     },
     intCard__error:{
         color: 'red',

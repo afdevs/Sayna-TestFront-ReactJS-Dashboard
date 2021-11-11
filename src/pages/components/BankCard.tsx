@@ -1,7 +1,8 @@
 import { createStyles, makeStyles } from '@mui/styles'
 import React from 'react'
 // @ts-ignore
-import logo from '../../images/logo.JPG';
+import logo from '../../images/logo.jpg';
+import LockIcon from '@mui/icons-material/Lock';
 
 const useStyles = makeStyles(() => createStyles({
     bankCard:{
@@ -14,16 +15,18 @@ const useStyles = makeStyles(() => createStyles({
     },
     bankCard__amount:{
         fontSize: '1.3em',
-        margin:'20px 0 40px'
+        margin:'30px 0 30px'
     },
     moneySign:{
         fontWeight: 'bold'
     },
     bankCard__number:{
-        margin:'20px 0 5px'
+        margin:'20px 0 5px',
+        color: 'rgba(0, 0, 0, 0.54)'
     },
     bankCard__date:{
-        fontSize: '0.9em',
+        fontSize: '0.9em',      
+        color: 'rgba(0, 0, 0, 0.54)'
     },
     bankCard__company:{
         display: 'flex', 
@@ -31,24 +34,28 @@ const useStyles = makeStyles(() => createStyles({
     },
     bankCard__companyText:{
         fontWeight: 'bold'
+    },
+    logo:{
+        marginRight: 16,
+        width: 30
     }
 }))
 
-export const BankCard = () => {
+export const BankCard = (props:{companyName: string; amount: number; cardNumber: string; expiresDate:string; logo: React.ReactNode | null, isLocked: boolean, isActive:boolean}) => {
     const classes=useStyles()
     return (
         <div className={classes.bankCard}>
             <div className={classes.bankCard__company}>
-            <img src={logo} alt="Logo" /> <span className={classes.bankCard__companyText}>Corporate</span>
+            <img src={logo} alt="Logo"  className={classes.logo}/> <span className={classes.bankCard__companyText}>{props.companyName}</span>
             </div>
             <div className={classes.bankCard__amount}>
-                1224.42 <span  className={classes.moneySign}>USD</span>
+              {props.amount} <span  className={classes.moneySign}>USD</span>
             </div>
             <div className={classes.bankCard__number}>
-                5434 3456 4344 4345
+                {props.cardNumber}
             </div>
             <div className={classes.bankCard__date}>
-                04 / 04
+                {props.expiresDate}
             </div>
         </div>
     )

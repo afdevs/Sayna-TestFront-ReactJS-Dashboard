@@ -6,8 +6,18 @@ import { DashContainer } from '../components/DashContainer'
 import { MenuNav } from '../components/MenuNav'
 import { LimitCardsList } from '../components/LimitCardsList';
 import { InternPayments } from '../components/InternPayments'
+import { RecentActivities } from '../components/RecentActivities';
+import { createStyles, makeStyles } from '@mui/styles'
 
+const useStyles = makeStyles(() => createStyles({
+    interPayAndActivities:{
+         display: 'flex',
+         justifyContent:'space-between',
+        //  alignItems: 'center'
+    }
+ }));
 export const Dashboard = () => {
+  const classes=useStyles();
     return (
         <div>
             
@@ -18,8 +28,10 @@ export const Dashboard = () => {
               <BankCardsList/>
             {/* </Route> */}
               <LimitCardsList/>
-              <InternPayments/>
-
+              <div className={classes.interPayAndActivities}>
+                <InternPayments/>
+                <RecentActivities />
+              </div>
           </DashContainer>
         </div>
     )

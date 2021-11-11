@@ -20,7 +20,8 @@ const useStyles = makeStyles(() => createStyles({
         fontSize: '1em',
     },
     cardLimit__money:{
-        fontSize: '0.7em'
+        fontSize: '0.7em',
+        color: 'rgba(0, 0, 0, 0.54)'
     },
     cardLimit__Amount:{
         fontWeight: 'bold',

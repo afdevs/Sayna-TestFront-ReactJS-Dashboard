@@ -7,13 +7,12 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import HomeIcon from '@mui/icons-material/Home';
 import { RoutesAdmin } from '../../utils/enum/RoutesAdmin';
 import MarkunreadMailboxIcon from '@mui/icons-material/MarkunreadMailbox';
-import RecentActorsIcon from '@mui/icons-material/RecentActors';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useLocation } from 'react-router';
 import { createStyles, makeStyles } from '@mui/styles';
-
+import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 
 const useStyles = makeStyles(() => createStyles({
     listNav: {
@@ -21,7 +20,8 @@ const useStyles = makeStyles(() => createStyles({
     },
     footerNav:{
         position: 'absolute',
-        bottom: 60
+        bottom: 60,
+        width: '100%'
     }
 }));
 
@@ -94,7 +94,7 @@ export function MenuNav() {
                 active={activeMenu === RoutesAdmin.CONTACTS}
                 path={RoutesAdmin.CONTACTS}
                 onClick={handleChangeActiveMenu}
-                icon={RecentActorsIcon}
+                icon={PermContactCalendarIcon}
             />
 
             <div className={classes.footerNav}>

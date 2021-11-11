@@ -13,7 +13,8 @@ const useStyles = makeStyles(() => createStyles({
         padding: '30px',
     },
     lastDays:{
-        fontSize: '0.8em'
+        fontSize: '0.8em',
+        color: 'rgba(0, 0, 0, 0.54)'
     },
     intPaymentList:{
         display: 'flex',
@@ -51,11 +52,11 @@ export const InternPayments = () => {
     return (
         <div className={classes.intPaymentContainer}>
             <div className={classes.intPaymentHeader}>
-            <h3> 
-            In Payement</h3>
-            <span className={classes.lastDays}>
-            the last 30 days
-            </span>
+                <h3> 
+                In Payement</h3>
+                <span className={classes.lastDays}>
+                the last 30 days
+                </span>
 
             </div>
 
